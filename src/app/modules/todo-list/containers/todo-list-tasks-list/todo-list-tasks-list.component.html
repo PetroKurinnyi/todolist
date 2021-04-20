@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>{{ listTitle }}</h2>
+  <div *ngFor="let task of tasks">
+    <app-todo-list-task
+      [task]="task"
+      (changeStatus)="changeStatus($event)"
+    ></app-todo-list-task>
+  </div>
+</div>

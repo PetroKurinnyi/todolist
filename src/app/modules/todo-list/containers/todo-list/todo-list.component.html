@@ -1,0 +1,14 @@
+<div class="container">
+  <app-todo-list-task-form></app-todo-list-task-form>
+
+  <div class="lists-container">
+    <app-todo-list-tasks-list
+      [listTitle]="'Incompleted tasks'"
+      [tasks]="todoListService.incompletedTasks$ | async"
+    ></app-todo-list-tasks-list>
+    <app-todo-list-tasks-list
+      [listTitle]="'Completed tasks'"
+      [tasks]="todoListService.completedTasks$ | async"
+    ></app-todo-list-tasks-list>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 15px;
+  background-color: cadetblue;
+  color: white;
+  border-radius: 7px;
+
+  button {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,29 @@
+<form class="container" [formGroup]="form">
+  <h1>Create Task</h1>
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Title" formControlName="title" />
+    <mat-error *ngIf="form.controls.title.errors?.uniqTitle">
+      {{ form.controls.title.errors?.uniqTitle.value }}
+    </mat-error>
+    <mat-error *ngIf="form.controls.title.errors?.required">
+      Required field
+    </mat-error>
+    <mat-error *ngIf="form.controls.title.errors?.pattern">
+      Can’t start with a special character
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      placeholder="Description"
+      formControlName="description"
+    ></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="create()" [disabled]="form.invalid">
+    Create
+  </button>
+</form>

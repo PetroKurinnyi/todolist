@@ -1,0 +1,8 @@
+<div>
+  <mat-checkbox
+    [checked]="task.status === 'completed'"
+    (change)="changeStatus.emit(task.id)"
+  >
+    {{ task.title }}
+  </mat-checkbox>
+</div>
